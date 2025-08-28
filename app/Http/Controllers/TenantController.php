@@ -12,7 +12,7 @@ class TenantController extends Controller
         $tenant = Tenant::create([
             'name'        => $request['name'],
             'slug'        => $request['slug'],
-            'db_database' => $request['database'],
+            'db_database' => $request['db_database'],
             'db_host'     => $request['db_host'],
             'db_username' => $request['db_username'],
             'db_password' => $request['db_password'],
