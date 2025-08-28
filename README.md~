@@ -1,0 +1,21 @@
+# Multi-Tenant Job API with Laravel 12
+
+## 🚀 Overview
+This project is a multi-tenant job posting API built with Laravel 12.  
+Each tenant (company) has its own database, and jobs are synced into Elasticsearch for fast searching.  
+Queues (managed by Laravel Horizon + Redis) ensure heavy tasks don’t block requests.
+
+## ⚙️ Tech Stack
+- Laravel 12 + Sail (Docker)
+- MySQL (Central + Tenant DBs)
+- Laravel Passport (Authentication)
+- Redis + Horizon (Queue Management)
+- Elasticsearch (Job search indexing)
+
+## 🏗️ Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourname/multi-tenant-scout.git
+   cd multi-tenant-scout
+
