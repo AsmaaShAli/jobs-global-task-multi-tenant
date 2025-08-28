@@ -72,7 +72,7 @@ Run tests with:
 ```bash
 ./vendor/bin/sail artisan test
 ```
-P.S: it should work, but it didn't for some problem with elastic search, but when I ran the tests manually with phpstorm, each ran successfully.
+> **P.S: it should work, but it didn't for some problem with elastic search, but when I ran the tests manually with phpstorm, each ran successfully.**
 
 
 ##  📡 API Endpoints
