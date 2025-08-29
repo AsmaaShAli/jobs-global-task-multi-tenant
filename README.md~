@@ -44,6 +44,23 @@ cd jobs-global-task-multi-tenant
 
 
 ### 5. Create tenants
+
+#### use curl or tinker to create new tenants 
+- example curl : 
+
+```bash
+curl --location --request POST 'http://0.0.0.0:80/api/tenants' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+        "name": "Acme Inc",
+        "slug": "acme",
+        "db_database": "tenant_acme",
+        "db_host": "mysql",
+        "db_username": "sail",
+        "db_password": "password"
+      }'
+```
+
 ```bash
 ./vendor/bin/sail artisan tinker
 

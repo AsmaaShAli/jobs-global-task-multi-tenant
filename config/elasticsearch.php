@@ -2,6 +2,10 @@
 
 return [
     'hosts' => [
-        env('ELASTICSEARCH_HOST', 'http://localhost:9200'),
+        env('ELASTICSEARCH_HOSTS', 'http://elasticsearch:9200'),
+    ],
+    'driver' => 'elastic',
+    'elasticsearch' => [
+        'hosts' => explode(',', env('ELASTICSEARCH_HOSTS', 'http://elasticsearch:9200')),
     ],
 ];

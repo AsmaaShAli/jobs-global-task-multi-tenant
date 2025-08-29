@@ -32,7 +32,6 @@ class SetTenantConnection
 
         $tenant = Tenant::where('slug', $tenantSlug)->first();
 
-
         if (! $tenant) {
             return response()->json(['error' => 'Tenant not found'], 404);
         }
@@ -41,6 +40,7 @@ class SetTenantConnection
 
         DB::setDefaultConnection('tenant');
         app()->instance(Tenant::class, $tenant);
+
         return $next($request);
     }
 

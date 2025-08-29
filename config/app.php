@@ -110,8 +110,6 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        App\Providers\ElasticsearchServiceProvider::class,
-
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -143,6 +141,7 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+        App\Providers\ElasticsearchServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class, // Uncomment if using broadcasting
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
