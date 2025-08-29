@@ -15,7 +15,7 @@ class TenantTest extends TestCase
         $response = $this->postJson('/api/tenants', [
             'name' => 'Tenant A',
             'slug' => 'tenant-a',
-            'database' => 'tenant_a_db',
+            'db_database' => 'tenant_a_db',
             'db_host' => '127.0.0.1',
             'db_username' => 'tenant_user',
             'db_password' => 'secret'

@@ -75,10 +75,24 @@ curl --location --request POST 'http://0.0.0.0:80/api/tenants' \
 ]);
 ```
 
-### Run tenant migrations
+### 6. Run tenant migrations
 ```bash
 ./vendor/bin/sail artisan tenants:migrate
 ```
+
+### 7. add jobs to new tenant DB using CURL
+```bash
+curl --location --request POST 'http://0.0.0.0:80/api/jobs' \
+--header 'Content-Type: application/json' \
+--header 'X-Tenant-ID: acme' \
+--data-raw '{
+        "title": "Backend Engineer",
+        "description": "Build and maintain APIs",
+        "location": "Cairo"
+      }'
+```
+
+
 ## 🗃 Queue & Horizon
 ```bash
 ./vendor/bin/sail artisan horizon
@@ -86,11 +100,7 @@ curl --location --request POST 'http://0.0.0.0:80/api/tenants' \
 Jobs  are dispatched after response using queueable events.
 
 ### 🧪 Testing
-Run tests with:
-```bash
-./vendor/bin/sail artisan test
-```
-> **P.S: it should work, but it didn't for some problem with elastic search, but when I ran the tests manually with phpstorm, each ran successfully.**
+I created 2 unit tests that can each be run to ensure everything, but anyway the CURL endpoints works for that matter too.
 
 
 ##  📡 API Endpoints
@@ -126,7 +136,7 @@ Tenant context is determined via a custom header:
 
 - Tenant creation bypasses middleware (since no tenant exists yet).
 
-- All other endpoints require X-Tenant header.
+- All other endpoints require X-Tenant-ID header.
 
 - Elasticsearch syncing is async (check Horizon dashboard).
 
